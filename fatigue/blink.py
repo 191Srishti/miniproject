@@ -1,10 +1,13 @@
+
 import time
 
 
 class BlinkDetector:
 
-    def __init__(self, ear_threshold=0.20):
+    def __init__(self, ear_threshold=0.20, long_closure_threshold=2.0):
+
         self.ear_threshold = ear_threshold
+        self.long_closure_threshold = long_closure_threshold
 
         self.eye_closed = False
         self.close_start_time = None
@@ -34,12 +37,12 @@ class BlinkDetector:
 
                 self.total_blinks += 1
 
-                # Consider > 1 second a prolonged closure
                 previous_duration = (
                     current_time - self.close_start_time
                 )
 
-                if previous_duration > 1.0:
+                # Count one completed long closure
+                if previous_duration >= self.long_closure_threshold:
                     self.long_closures += 1
 
             self.eye_closed = False
