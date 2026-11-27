@@ -8,6 +8,12 @@ The system processes facial video using OpenCV and MediaPipe. It extracts facial
 
 It displays real-time monitoring information and generates alerts when potential signs of fatigue are detected.
 
+## Dashboard Preview
+
+The application provides a real-time dashboard for monitoring estimated heart rate and visual signs of fatigue.
+
+![Real-Time Health and Fatigue Monitoring Dashboard](screenshots/dashboardfinal.gif)
+
 ## Key Features
 
 - **Contactless Heart Rate Estimation:** Estimates heart rate (BPM) from facial video using green-channel rPPG.
